@@ -19,3 +19,11 @@ class Contact(models.Model):
     city = models.CharField(max_length=255, null=True, blank=True)
     state = USStateField(null=True, blank=True)
     zip_code = USZipCodeField(null=True, blank=True)
+    birthday = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+class Note(models.Model):
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
